@@ -2051,6 +2051,36 @@ body {
   font-size: 0.95rem;
 }
 
+/* ---- Language Toggle ---- */
+#lang-toggle, #lang-toggle-mobile {
+  transition: all 0.3s ease;
+}
+
+#lang-toggle:hover {
+  transform: scale(1.05);
+}
+
+.lang-indicator {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.lang-en .lang-indicator {
+  color: var(--ivory);
+}
+
+.lang-en .lang-indicator::before {
+  content: "EN";
+}
+
+.lang-fr .lang-indicator::before {
+  content: "FR";
+}
+
+.lang-fr .lang-indicator {
+  color: var(--gold);
+}
+
 @media (width < 640px) {
   .faq-button {
     padding: 1.25rem;
@@ -2161,26 +2191,35 @@ body {
           <span class="font-serif text-xl tracking-wide text-[color:var(--ivory)]">Indian Spices</span>
         </a>
         <nav class="hidden md:flex items-center gap-8">
-          <a href="#story" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Histoire</a>
-          <a href="#menu" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Menu</a>
-          <a href="#chef" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Le Chef</a>
-          <a href="#spices" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Épices</a>
-          <a href="#gallery" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Galerie</a>
-          <a href="#reserve" class="text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors">Réserver</a>
+          <a href="#story" class="nav-text text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors" data-en="Story" data-fr="Histoire">Histoire</a>
+          <a href="#menu" class="nav-text text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors" data-en="Menu" data-fr="Menu">Menu</a>
+          <a href="#chef" class="nav-text text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors" data-en="Chef" data-fr="Le Chef">Le Chef</a>
+          <a href="#spices" class="nav-text text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors" data-en="Spices" data-fr="Épices">Épices</a>
+          <a href="#reserve" class="nav-text text-[0.72rem] uppercase tracking-[0.28em] text-[color:var(--ivory)]/80 hover:text-[color:var(--gold)] transition-colors" data-en="Reserve" data-fr="Réserver">Réserver</a>
         </nav>
-        <a href="#reserve" class="hidden md:inline-flex btn-ghost-lux py-2 px-5 text-[0.7rem]">Réserver une table</a>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#reserve" class="btn-ghost-lux py-2 px-5 text-[0.7rem] nav-btn-text" data-en="Book a table" data-fr="Réserver une table">Réserver une table</a>
+          <button id="lang-toggle" class="relative group magnet" aria-label="Toggle language" title="FR / EN">
+            <span class="text-[0.75rem] font-semibold text-[color:var(--gold)] hover:text-[color:var(--ivory)] transition-colors">
+              <span class="lang-indicator">FR</span> / EN
+            </span>
+          </button>
+        </div>
         <button id="nav-toggle" class="md:hidden text-[color:var(--ivory)]" aria-label="Menu">
           <span class="block h-px w-6 bg-current mb-1.5"></span>
           <span class="block h-px w-6 bg-current"></span>
         </button>
       </div>
       <div id="nav-mobile" class="hidden md:hidden mt-2 glass-dark rounded-3xl p-6 flex-col gap-4">
-        <a href="#story" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Histoire</a>
-        <a href="#menu" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Menu</a>
-        <a href="#chef" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Le Chef</a>
-        <a href="#spices" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Épices</a>
-        <a href="#gallery" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Galerie</a>
-        <a href="#reserve" class="text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90">Réserver</a>
+        <a href="#story" class="nav-text text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90" data-en="Story" data-fr="Histoire">Histoire</a>
+        <a href="#menu" class="nav-text text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90" data-en="Menu" data-fr="Menu">Menu</a>
+        <a href="#chef" class="nav-text text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90" data-en="Chef" data-fr="Le Chef">Le Chef</a>
+        <a href="#spices" class="nav-text text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90" data-en="Spices" data-fr="Épices">Épices</a>
+        <a href="#reserve" class="nav-text text-sm uppercase tracking-[0.28em] text-[color:var(--ivory)]/90" data-en="Reserve" data-fr="Réserver">Réserver</a>
+        <hr class="border-[color:var(--gold)]/20 my-2" />
+        <button id="lang-toggle-mobile" class="text-sm uppercase tracking-[0.28em] text-[color:var(--gold)] text-left hover:text-[color:var(--ivory)] transition-colors">
+          🌐 <span class="lang-indicator">Français</span> / English
+        </button>
       </div>
     </div>
   </header>
@@ -2413,25 +2452,7 @@ body {
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="relative py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 md:px-10 lg:px-16 bg-[oklch(0.14_0.02_30)] text-[color:var(--ivory)] overflow-hidden">
-    <div class="mx-auto max-w-[1400px]">
-      <div class="reveal">
-        <div class="flex items-end justify-between flex-wrap gap-6 mb-16">
-          <div>
-            <p class="eyebrow text-[color:var(--gold)]">Galerie</p>
-            <h2 class="mt-6 font-serif text-5xl md:text-7xl">
-              Instants<br /><em class="text-gold-gradient font-light">volés à la maison.</em>
-            </h2>
-          </div>
-        </div>
-      </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[180px] md:auto-rows-[220px] gap-4" id="gallery-grid"></div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
   <section class="relative py-16 sm:py-24 md:py-32 lg:py-48 px-4 sm:px-6 md:px-10 lg:px-16 bg-[color:var(--cream)] overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] w-[800px] rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
     <div class="mx-auto max-w-[1400px] relative">
@@ -3034,6 +3055,292 @@ document.getElementById("footer-year").textContent = `© ${new Date().getFullYea
     form.classList.add("hidden");
     success.classList.remove("hidden");
   });
+})();
+
+// ---------- Language System ----------
+(function () {
+  const translations = {
+    en: {
+      // Nav
+      "nav.story": "Story",
+      "nav.menu": "Menu",
+      "nav.chef": "Chef",
+      "nav.spices": "Spices",
+      "nav.reserve": "Reserve",
+      "nav.book": "Book a table",
+      
+      // Hero
+      "hero.eyebrow": "Montréal · Fine Indian Dining",
+      "hero.title1": "A journey",
+      "hero.title2": "through India",
+      "hero.title3": "in twelve courses.",
+      "hero.desc": "A table where ancient spices meet modern precision. Each dish is a composition, each course a chapter.",
+      "hero.reserve": "Book a table",
+      "hero.menu": "Explore the menu",
+      "hero.story": "Our story",
+      "hero.years": "Years of Excellence",
+      "hero.spices": "Signature Spices",
+      "hero.stars": "Google Stars",
+      "hero.chapters": "Chapters on Menu",
+      
+      // Story
+      "story.eyebrow": "Our Story",
+      "story.title1": "From old Delhi",
+      "story.title2": "to Saint-Denis Street.",
+      "story.desc1": "Founded in 2011 by the Kaur family, Indian Spices was born of a simple dream: to offer Montréal the cuisine one finds at home, in Amritsar, on a festival evening — refined, generous, served without detour.",
+      "story.desc2": "Our spices arrive by sea, our breads come from a hand-crafted clay tandoor, and our recipes have been passed down for four generations.",
+      "story.founded": "Founded",
+      "story.generations": "Generations",
+      "story.awards": "Awards",
+      "story.chef": "Executive Chef",
+      "story.quote": "\"We cook memory.\"",
+      "story.timeline": "Timeline",
+      "story.four": "Four stages, one table.",
+      "story.fire": "First Fire",
+      "story.fireDesc": "The tandoor ignites on Saint-Denis Street.",
+      "story.journey": "The Journey",
+      "story.journeyDesc": "Spice Route: Kerala, Kashmir, Goa.",
+      "story.workshop": "The Workshop",
+      "story.workshopDesc": "Opening of our in-house grinding workshop.",
+      "story.renaissance": "Renaissance",
+      "story.renaissanceDesc": "New menu, new room, same soul.",
+      
+      // Signatures
+      "sig.eyebrow": "Chef's Recommendations",
+      "sig.title": "House Signatures.",
+      
+      // Menu
+      "menu.eyebrow": "The Menu",
+      "menu.title1": "Twelve",
+      "menu.title2": "chapters.",
+      "menu.desc": "Each category reveals a region, a technique, a season. Choose your journey.",
+      
+      // Spices
+      "spices.eyebrow": "The Apothecary",
+      "spices.title1": "Our shelf",
+      "spices.title2": "of living spices.",
+      "spices.desc": "Every spice is roasted, ground and blended on-site. Nothing fixed, nothing anonymous — a living cabinet that perfumes the whole house.",
+      
+      // Testimonials
+      "testimonials.eyebrow": "House Voices",
+      "testimonials.title": "People talk.",
+      "testimonials.reviews": "Google Reviews",
+      
+      // Reserve
+      "reserve.eyebrow": "Reservation",
+      "reserve.title1": "Your table",
+      "reserve.title2": "awaits you.",
+      "reserve.desc": "We welcome twenty-four covers per service. Book your experience — we prepare your journey.",
+      "reserve.tue": "Tuesday - Thursday",
+      "reserve.fri": "Friday - Saturday",
+      "reserve.sun": "Sunday",
+      "reserve.mon": "Monday",
+      "reserve.closed": "Closed",
+      "reserve.name": "Name",
+      "reserve.email": "Email",
+      "reserve.date": "Date",
+      "reserve.time": "Time",
+      "reserve.guests": "Guests",
+      "reserve.occasion": "Occasion (optional)",
+      "reserve.submit": "Confirm Reservation",
+      "reserve.phone": "Or by phone",
+      "reserve.success": "Reservation Received",
+      "reserve.successMsg": "We will confirm by email within the hour.",
+      
+      // Contact
+      "contact.eyebrow": "Find Us",
+      "contact.title1": "Saint-Denis Street,",
+      "contact.title2": "The Plateau.",
+      "contact.address": "Address",
+      "contact.phone": "Phone",
+      "contact.email": "Email",
+      "contact.metro": "Metro",
+      
+      // FAQ
+      "faq.eyebrow": "Frequently Asked",
+      "faq.title": "Before Your Visit.",
+      "faq.desc": "Everything you need to know to prepare your experience at Indian Spices.",
+      "faq.1q": "What dietary restrictions do you accommodate?",
+      "faq.1a": "We accommodate vegan, gluten-free, nut-free, and common allergies. Please inform us at booking or upon arrival. Chef Arjun is happy to create alternatives for everyone.",
+      "faq.2q": "What is the dress code?",
+      "faq.2a": "Smart casual minimum. We encourage elegance — it's a special occasion. No athletic wear or beach sandals. It's a meal, not a workout.",
+      "faq.3q": "What is your cancellation policy?",
+      "faq.3a": "Cancellations must be made 72 hours before the reservation. Less than 72 hours, we retain 50% of the deposit. No-show = full balance charged. We understand emergencies — call us.",
+      "faq.4q": "Do you offer private events or catering?",
+      "faq.4a": "Yes. We can accommodate up to 40 people for private events in our room. For off-site events, we offer elegant catering. Contact reservations@indianspices.ca with your details.",
+      "faq.5q": "How long does a typical service last?",
+      "faq.5a": "Plan 2.5 to 3.5 hours for the complete 12-course experience. It's a journey, not a race. No time limit — stay as long as you wish.",
+      "faq.6q": "Do you offer wine pairings or drink pairings?",
+      "faq.6a": "Yes. We work with local winemakers and importers to offer 4, 6, or 12-course pairings. We also have a selection of lassi, teas and digestifs. Mention it when booking.",
+      "faq.7q": "Can I bring my own wine?",
+      "faq.7a": "No, we don't allow outside beverages. But our wine list and non-alcoholic options are designed for our dishes. Talk to our sommelier.",
+      "faq.8q": "Do you accept walk-ins?",
+      "faq.8a": "No. We only welcome by reservation to maintain experience quality. Book at least 2 weeks in advance. We occasionally have cancellations — call to check.",
+    },
+    fr: {
+      // Nav
+      "nav.story": "Histoire",
+      "nav.menu": "Menu",
+      "nav.chef": "Le Chef",
+      "nav.spices": "Épices",
+      "nav.reserve": "Réserver",
+      "nav.book": "Réserver une table",
+      
+      // Hero
+      "hero.eyebrow": "Montréal · Fine dining indien",
+      "hero.title1": "Un voyage",
+      "hero.title2": "à travers l'Inde",
+      "hero.title3": "en douze services.",
+      "hero.desc": "Une table où les épices anciennes rencontrent la précision moderne. Chaque plat est une composition, chaque service un chapitre.",
+      "hero.reserve": "Réserver une table",
+      "hero.menu": "Explorer le menu",
+      "hero.story": "Notre histoire",
+      "hero.years": "Années d'excellence",
+      "hero.spices": "Épices signature",
+      "hero.stars": "Étoiles Google",
+      "hero.chapters": "Chapitres au menu",
+      
+      // Story
+      "story.eyebrow": "Notre récit",
+      "story.title1": "De la vieille Delhi",
+      "story.title2": "à la rue Saint-Denis.",
+      "story.desc1": "Fondée en 2011 par la famille Kaur, Indian Spices est née d'un rêve simple : offrir à Montréal la cuisine que l'on trouve chez soi, à Amritsar, un soir de fête — épurée, généreuse, servie sans détour.",
+      "story.desc2": "Nos épices arrivent par la mer, nos pains sortent d'un tandoor d'argile façonné à la main, et nos recettes se transmettent depuis quatre générations.",
+      "story.founded": "Ouverture",
+      "story.generations": "Générations",
+      "story.awards": "Récompenses",
+      "story.chef": "Chef exécutif",
+      "story.quote": "\"Nous cuisinons la mémoire.\"",
+      "story.timeline": "Chronologie",
+      "story.four": "Quatre étapes, une seule table.",
+      "story.fire": "Premier feu",
+      "story.fireDesc": "Le tandoor s'allume rue Saint-Denis.",
+      "story.journey": "Le voyage",
+      "story.journeyDesc": "Route des épices : Kerala, Cachemire, Goa.",
+      "story.workshop": "L'atelier",
+      "story.workshopDesc": "Ouverture de notre atelier de mouture maison.",
+      "story.renaissance": "Renaissance",
+      "story.renaissanceDesc": "Nouvelle carte, nouvelle salle, même âme.",
+      
+      // Signatures
+      "sig.eyebrow": "Recommandations du chef",
+      "sig.title": "Signatures de la maison.",
+      
+      // Menu
+      "menu.eyebrow": "La Carte",
+      "menu.title1": "Douze",
+      "menu.title2": "chapitres.",
+      "menu.desc": "Chaque catégorie révèle une région, une technique, une saison. Choisissez votre voyage.",
+      
+      // Spices
+      "spices.eyebrow": "L'apothicaire",
+      "spices.title1": "Notre étagère",
+      "spices.title2": "d'épices vivantes.",
+      "spices.desc": "Chaque épice est torréfiée, moulue et assemblée sur place. Rien de figé, rien d'anonyme — un cabinet vivant qui parfume toute la maison.",
+      
+      // Testimonials
+      "testimonials.eyebrow": "Voix de la maison",
+      "testimonials.title": "On en parle.",
+      "testimonials.reviews": "avis Google",
+      
+      // Reserve
+      "reserve.eyebrow": "Réservation",
+      "reserve.title1": "Votre table",
+      "reserve.title2": "vous attend.",
+      "reserve.desc": "Nous accueillons vingt-quatre couverts par service. Réservez votre expérience — nous préparons votre voyage.",
+      "reserve.tue": "Mardi — Jeudi",
+      "reserve.fri": "Vendredi — Samedi",
+      "reserve.sun": "Dimanche",
+      "reserve.mon": "Lundi",
+      "reserve.closed": "Fermé",
+      "reserve.name": "Nom",
+      "reserve.email": "Courriel",
+      "reserve.date": "Date",
+      "reserve.time": "Heure",
+      "reserve.guests": "Convives",
+      "reserve.occasion": "Occasion (optionnel)",
+      "reserve.submit": "Confirmer la réservation",
+      "reserve.phone": "Ou par téléphone",
+      "reserve.success": "Réservation reçue",
+      "reserve.successMsg": "Nous vous confirmerons par courriel dans l'heure.",
+      
+      // Contact
+      "contact.eyebrow": "Nous trouver",
+      "contact.title1": "Rue Saint-Denis,",
+      "contact.title2": "Le Plateau.",
+      "contact.address": "Adresse",
+      "contact.phone": "Téléphone",
+      "contact.email": "Courriel",
+      "contact.metro": "Métro",
+      
+      // FAQ
+      "faq.eyebrow": "Questions fréquentes",
+      "faq.title": "Avant votre visite.",
+      "faq.desc": "Tout ce que vous devez savoir pour préparer votre expérience chez Indian Spices.",
+      "faq.1q": "Quelles sont les restrictions alimentaires que vous accommodez?",
+      "faq.1a": "Nous accommodons les régimes végétalien, sans gluten, sans noix, et les allergies courantes. Veuillez nous en informer au moment de la réservation ou dès votre arrivée. Notre chef Arjun est heureux de créer des alternatives pour tous.",
+      "faq.2q": "Quel est le code vestimentaire?",
+      "faq.2a": "Smart casual minimum. Nous encourageons l'élégance — c'est une occasion spéciale. Pas de vêtements sportifs ou de sandales de plage. C'est un repas, pas un entraînement.",
+      "faq.3q": "Quelle est votre politique d'annulation?",
+      "faq.3a": "Les annulations doivent être faites 72 heures avant la réservation. Moins de 72 heures, nous retenons 50% du dépôt. Pas de présentation sans avertissement = débit du solde complet. Nous comprenons les urgences — appelez-nous.",
+      "faq.4q": "Proposez-vous des événements privés ou du catering?",
+      "faq.4a": "Oui. Nous pouvons accueillir jusqu'à 40 personnes pour des événements privés dans notre salle. Pour les événements hors-site, nous offrons du catering élégant. Contactez reservations@indianspices.ca avec vos détails.",
+      "faq.5q": "Combien de temps dure un service type?",
+      "faq.5a": "Comptez 2h30 à 3h30 pour l'expérience complète de 12 services. C'est un voyage, pas une course. Pas de limite de temps — restez aussi longtemps que vous le souhaitez.",
+      "faq.6q": "Proposez-vous des accords mets-vins ou des pairings de boissons?",
+      "faq.6a": "Oui. Nous travaillons avec des vignerons locaux et importateurs pour proposer des pairings 4, 6 ou 12 services. Nous avons aussi une sélection de lassis, thés et digestifs. Mentionnez-le lors de la réservation.",
+      "faq.7q": "Puis-je apporter mon propre vin?",
+      "faq.7a": "Non, nous n'autorisez pas les apports externes. Mais notre liste de vin et nos alternatives sans alcool sont pensées pour nos plats. Parlez à notre sommelier.",
+      "faq.8q": "Acceptez-vous les clients sans réservation?",
+      "faq.8a": "Non. Nous accueillons seulement sur réservation pour maintenir la qualité de l'expérience. Réservez au moins 2 semaines à l'avance. Nous avons parfois des annulations — appelez pour vérifier.",
+    }
+  };
+
+  function setLanguage(lang) {
+    const docLang = lang === "en" ? "lang-en" : "lang-fr";
+    document.documentElement.classList.remove("lang-en", "lang-fr");
+    document.documentElement.classList.add(docLang);
+    document.documentElement.lang = lang;
+    
+    // Update all elements with data-en and data-fr attributes
+    document.querySelectorAll("[data-en][data-fr]").forEach((el) => {
+      el.textContent = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-fr");
+    });
+    
+    // Update translation keys
+    Object.keys(translations[lang]).forEach((key) => {
+      const els = document.querySelectorAll(`[data-i18n="${key}"]`);
+      els.forEach((el) => {
+        el.textContent = translations[lang][key];
+      });
+    });
+    
+    // Update language indicator
+    const indicator = document.querySelector(".lang-indicator");
+    if (indicator) {
+      indicator.textContent = lang === "en" ? "EN" : "FR";
+    }
+    
+    localStorage.setItem("language", lang);
+  }
+
+  const defaultLang = localStorage.getItem("language") || "fr";
+  setLanguage(defaultLang);
+
+  document.getElementById("lang-toggle")?.addEventListener("click", () => {
+    const current = document.documentElement.classList.contains("lang-en") ? "en" : "fr";
+    setLanguage(current === "en" ? "fr" : "en");
+  });
+
+  document.getElementById("lang-toggle-mobile")?.addEventListener("click", () => {
+    const current = document.documentElement.classList.contains("lang-en") ? "en" : "fr";
+    setLanguage(current === "en" ? "fr" : "en");
+  });
+
+  window.getTranslation = (key) => {
+    const lang = document.documentElement.classList.contains("lang-en") ? "en" : "fr";
+    return translations[lang][key] || key;
+  };
 })();
 
 // ---------- Newsletter form ----------
