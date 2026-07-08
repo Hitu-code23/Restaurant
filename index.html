@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"Indian Spices","servesCuisine":"Indian","priceRange":"$$$","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"}}
 </script>
@@ -24,7 +24,7 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: "Playfair Display", "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -1865,7 +1865,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  font-family: "Jost", "Helvetica Neue", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -1942,7 +1942,7 @@ body {
 
 .btn-lux {
   position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
-  padding: 1rem 2rem; font-family: "Inter", sans-serif; font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
+  padding: 1rem 2rem; font-family: "Jost", sans-serif; font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
   border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--gold) 60%, transparent);
   background: linear-gradient(180deg, oklch(0.32 0.09 25), oklch(0.22 0.06 25));
   color: var(--ivory); overflow: hidden;
@@ -2468,16 +2468,13 @@ body {
   <footer class="relative bg-[oklch(0.10_0.02_30)] text-[color:var(--ivory)] px-6 md:px-16 pt-24 pb-10 overflow-hidden">
     <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[400px] w-[900px] rounded-full bg-[color:var(--gold)]/10 blur-3xl"></div>
     <div class="mx-auto max-w-[1400px] relative grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
+      <div class="md:col-span-5">
         <div class="flex items-center gap-3">
           <span class="grid h-12 w-12 place-items-center rounded-full border border-[color:var(--gold)]/50 animate-spin-slow">
             <span class="font-serif text-gold-gradient text-xl">IS</span>
           </span>
           <span class="font-serif text-2xl">Indian Spices</span>
         </div>
-        <p class="mt-6 text-[color:var(--ivory)]/60 leading-relaxed max-w-md">
-          Une maison indienne à Montréal. Cuisine du sous-continent, produits nobles, hospitalité chaleureuse.
-        </p>
         <form id="newsletter-form" class="mt-8 flex glass-dark rounded-full p-1.5 max-w-md">
           <input type="email" placeholder="Rejoindre notre carnet secret" class="flex-1 bg-transparent px-5 py-2 outline-none text-sm placeholder-[color:var(--ivory)]/40" />
           <button class="rounded-full bg-[color:var(--gold)] text-[color:var(--maroon)] px-5 py-2 text-[0.7rem] uppercase tracking-[0.28em] magnet">S'inscrire</button>
@@ -2501,16 +2498,14 @@ body {
           <li>Carte cadeau</li>
         </ul>
       </div>
-      <div class="md:col-span-2">
+      <div class="md:col-span-3">
         <p class="eyebrow text-[color:var(--gold)]">Suivre</p>
         <ul class="mt-5 space-y-3 text-sm text-[color:var(--ivory)]/70">
           <li><a href="#" class="hover:text-[color:var(--gold)]">Instagram · @indianspicesmtl</a></li>
           <li><a href="#" class="hover:text-[color:var(--gold)]">Facebook</a></li>
           <li><a href="#" class="hover:text-[color:var(--gold)]">Le Devoir · L'article</a></li>
         </ul>
-      </div>
-      <div class="md:col-span-2">
-        <p class="eyebrow text-[color:var(--gold)]">Contact</p>
+        <p class="eyebrow text-[color:var(--gold)] mt-8">Contact</p>
         <ul class="mt-5 space-y-4 text-sm text-[color:var(--ivory)]/70">
           <li>
             <a href="tel:+15145234092" class="hover:text-[color:var(--gold)] font-serif text-base text-[color:var(--ivory)]/90">+1 (514) 523-4092</a>
